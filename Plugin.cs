@@ -18,12 +18,14 @@ namespace RaimbowWaitingMessages
         {
             base.OnEnabled();
 
+            Exiled.Events.Handlers.Server.RestartingRound += OnRestarting;
             Exiled.Events.Handlers.Server.WaitingForPlayers += OnWaiting;
         }
         public override void OnDisabled()
         {
             base.OnDisabled();
 
+            Exiled.Events.Handlers.Server.RestartingRound -= OnRestarting;
             Exiled.Events.Handlers.Server.WaitingForPlayers -= OnWaiting;
         }
 
