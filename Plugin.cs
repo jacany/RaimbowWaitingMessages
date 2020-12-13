@@ -38,6 +38,7 @@ namespace RaimbowWaitingMessages
         {
             foreach (CoroutineHandle coroutine in coroutines)
                 Timing.KillCoroutines(coroutine);
+            coroutines.Clear();
         }
 
         IEnumerator<float> RaimbowHint()
